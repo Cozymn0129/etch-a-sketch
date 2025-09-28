@@ -37,13 +37,6 @@ function createGrid(size) {
         container.appendChild(square);
     }
 }
-function createGrid_js(size) {
-
-    for (let i = 0; i < size * size; i++) {
-        const square = document.createElement("div");
-        square.classList.add("square");
-    }
-}
 
 document.getElementById("defaultMode").addEventListener("click", () => currentMode = "default");
 document.getElementById("randomMode").addEventListener("click", () => currentMode = "random");
