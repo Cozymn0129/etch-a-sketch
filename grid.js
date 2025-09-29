@@ -22,12 +22,12 @@ function createGrid(size) {
 
         square.addEventListener("mouseover", () => {
             if (currentMode === "default") {
-                square.style.backgroundColor = "rgb(221, 208, 252)";
+                square.style.backgroundColor = "rgb(100, 150, 55)";
                 square.style.opacity = "1";
             } else if (currentMode === "random") {
                 square.style.backgroundColor = getRandomRGB();
                 square.style.opacity = "1";
-            } else if (currentMode === "gray") {
+            } else if (currentMode === "progressiveDarkening") {
                 if (!square.dataset.opacity) square.dataset.opacity = 0.1;
                 else square.dataset.opacity = Math.min(parseFloat(square.dataset.opacity) + 0.1, 1);
                 square.style.backgroundColor = "rgb(75, 3, 242)";
@@ -40,7 +40,7 @@ function createGrid(size) {
 
 document.getElementById("defaultMode").addEventListener("click", () => currentMode = "default");
 document.getElementById("randomMode").addEventListener("click", () => currentMode = "random");
-document.getElementById("grayMode").addEventListener("click", () => currentMode = "gray");
+document.getElementById("progressiveDarkeningMode").addEventListener("click", () => currentMode = "progressiveDarkening");
 
 createGrid(16);
 
